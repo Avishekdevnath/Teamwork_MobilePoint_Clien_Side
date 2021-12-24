@@ -13,8 +13,28 @@ import AuthProvider from './Contexts/AuthProvider/AuthProvider';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import Explore from './Pages/Explore/Explore/Explore';
 import BikeDetails from './Pages/Explore/Bike/Bike/Bike';
+import { useDispatch, useSelector } from 'react-redux';
+import axios from 'axios';
+import { setPosts } from './redux/actions';
+import { useEffect } from 'react';
 
 function App() {
+
+  const user = useSelector((state) => state?.firebaseReducer?.firebase);
+  const posts = useSelector((state) => state.postsReduser.posts)
+  const dispatch = useDispatch();
+  const fetchProducts = async () => {
+    const response = await axios
+      .get("http://localhost:5000/posts")
+      .catch((err) => {
+        console.error("Err: ", err);
+      });
+    dispatch(setPosts(response.data));
+  };
+  useEffect(() => {
+    fetchProducts();
+  }, [posts]);
+
   return (
     <div className="App">
       <AuthProvider>
