@@ -1,17 +1,12 @@
 import { Avatar, Card, CardActions, Container, Grid, Rating, Typography } from '@mui/material';
 import { Box } from '@mui/system';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
 import useAuth from '../../../Hooks/useAuth';
+import { useSelector } from 'react-redux';
 
 const Reviews = () => {
-    const { user } = useAuth();
-    const [reviews, setReviews] = useState([]);
-    useEffect(() => {
-        fetch('https://pacific-oasis-02900.herokuapp.com/reviews')
-            .then(res => res.json())
-            .then(data => setReviews(data))
-    }, [])
+    const reviews = useSelector((state) => state.reviewsReducer.reviews);
     return (
         <Container>
             <Typography sx={{ fontWeight: 'bold', my: 5 }} variant="h4">Our Happy Clients</Typography>

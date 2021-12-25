@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Container, Grid, TextField, Typography } from '@mui/material';
 import useAuth from '../../../Hooks/useAuth';
+import axios from 'axios';
 
 const MakeAdmin = () => {
     const [adminData, setAdminData] = useState({});
@@ -13,22 +14,29 @@ const MakeAdmin = () => {
         newAdminData[field] = value;
         setAdminData(newAdminData);
     }
-    const handleAdminSubmit = (e) => {
+    const handleAdminSubmit = async (e) => {
         const user = { ...adminData };
-
-        fetch('https://pacific-oasis-02900.herokuapp.com/users/admin', {
-            method: 'PUT',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(user)
-        })
+        const response = await axios
+            .put('https://pacific-oasis-02900.herokuapp.com/users/admin', user)
             .then(res => res.json())
             .then(data => {
                 if (data.modifiedCount) {
                     alert('admin added successfully');
                 }
             })
+        // fetch('https://pacific-oasis-02900.herokuapp.com/users/admin', {
+        //     method: 'PUT',
+        //     headers: {
+        //         'content-type': 'application/json'
+        //     },
+        //     body: JSON.stringify(user)
+        // })
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         if (data.modifiedCount) {
+        //             alert('admin added successfully');
+        //         }
+        //     })
         e.preventDefault();
     }
     return (

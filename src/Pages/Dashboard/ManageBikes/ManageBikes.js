@@ -1,31 +1,43 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Button, Container, Rating, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@mui/material';
 import Paper from '@mui/material/Paper';
+import { useSelector } from 'react-redux';
+import { setBikes } from '../../../redux/actions';
+import axios from 'axios';
 
 const ManageBikes = () => {
-    const [bikes, setBikes] = useState([]);
-    useEffect(() => {
-        fetch('https://pacific-oasis-02900.herokuapp.com/bikes')
-            .then(res => res.json())
-            .then(data => setBikes(data))
-    }, [])
+    const bikes = useSelector((state) => state.bikesReducer.bikes);
 
     // deleting order
     const handleDelete = (_id) => {
         const confirm = window.confirm('Do you want to delete?')
+
         if (confirm) {
-            const url = `https://pacific-oasis-02900.herokuapp.com/bikes/${_id}`;
-            fetch(url, {
-                method: 'DELETE',
-            })
-                .then(res => res.json())
-                .then(data => {
-                    if (data.deletedCount > 0) {
-                        alert('deleted seccessfully');
-                        const remainingOrders = bikes.filter(order => order._id !== _id)
-                        setBikes(remainingOrders);
-                    }
-                })
+            const deleteBike = async () => {
+                const response = await axios
+                    .delete(`https://pacific-oasis-02900.herokuapp.com/bikes/${_id}`)
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.deletedCount > 0) {
+                            alert('deleted seccessfully');
+                            const remainingOrders = bikes.filter(order => order._id !== _id)
+                            setBikes(remainingOrders);
+                        }
+                    })
+
+            }
+            //     const url = `https://pacific-oasis-02900.herokuapp.com/bikes/${_id}`;
+            // fetch(url, {
+            //     method: 'DELETE',
+            // })
+            //     .then(res => res.json())
+            //     .then(data => {
+            //         if (data.deletedCount > 0) {
+            //             alert('deleted seccessfully');
+            //             const remainingOrders = bikes.filter(order => order._id !== _id)
+            //             setBikes(remainingOrders);
+            //         }
+            //     })
         }
     }
     return (

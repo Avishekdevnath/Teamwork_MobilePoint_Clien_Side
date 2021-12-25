@@ -10,9 +10,23 @@ export const user = (payload) => {
         payload: payload,
     };
 };
-export const setPosts = (payload) => {
+export const setBikes = (payload) => {
     return {
-        type: 'SET_POSTS',
+        type: 'SET_BIKES',
+        payload: payload,
+    };
+};
+
+export const setReviews = (payload) => {
+    return {
+        type: 'SET_REVIEWS',
+        payload: payload,
+    };
+};
+
+export const setOrder = (payload) => {
+    return {
+        type: 'SET_ORDERS',
         payload: payload,
     };
 };

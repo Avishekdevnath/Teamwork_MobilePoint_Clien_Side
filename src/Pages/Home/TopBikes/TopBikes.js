@@ -1,18 +1,15 @@
 import { Button, Card, CardActions, CardContent, CardMedia, Container, Grid, Typography } from '@mui/material';
 import { Box } from '@mui/system';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 import StarIcon from '@mui/icons-material/Star';
 import PaymentIcon from '@mui/icons-material/Payment';
 import LocalGasStationIcon from '@mui/icons-material/LocalGasStation';
+import { useSelector } from 'react-redux';
 
 const TopBikes = () => {
-    const [bikes, setBikes] = useState([]);
-    useEffect(() => {
-        fetch('https://pacific-oasis-02900.herokuapp.com/bikes')
-            .then(res => res.json())
-            .then(data => setBikes(data))
-    }, [])
+    const bikes = useSelector((state) => state.bikesReducer.bikes);
+
     return (
         <>
             <h1>Our Best Bikes</h1>

@@ -1,6 +1,7 @@
 import { Container, Grid } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { useParams } from 'react-router';
 import Footer from '../../../Shared/Footer/Footer';
 import Header from '../../../Shared/Header/Header';
@@ -9,12 +10,18 @@ import BikeDetailsCart from '../BikeDetailsCart/BikeDetailsCart';
 
 const Bike = () => {
     const { bikeID } = useParams();
-    const [bike, setBike] = useState({});
-    useEffect(() => {
-        fetch(`https://pacific-oasis-02900.herokuapp.com/bikes/${bikeID}`)
-            .then(res => res.json())
-            .then(data => setBike(data))
-    }, [bikeID])
+    // const [bike, setBike] = useState({});
+
+    const bikes = useSelector((state) => state.bikesReducer.bikes);
+
+    const bike = bikes.filter(bike => bike._id === bikeID);
+
+    // useEffect(() => {
+    //     fetch(`https://pacific-oasis-02900.herokuapp.com/bikes/${bikeID}`)
+    //         .then(res => res.json())
+    //         .then(data => setBike(data))
+    // }, [bikeID])
+
     return (
         <>
             <Header></Header>

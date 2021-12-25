@@ -1,4 +1,5 @@
 import { Alert, Button, Container, Grid, Snackbar, TextField, Typography } from '@mui/material';
+import axios from 'axios';
 import React, { useState } from 'react';
 import useAuth from '../../../Hooks/useAuth';
 
@@ -31,20 +32,28 @@ const Review = () => {
         newReviewData[field] = value;
         setReviewData(newReviewData);
     }
-    const handleReviewSubmit = (e) => {
-        fetch('https://pacific-oasis-02900.herokuapp.com/reviews', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(reviewData)
-        })
+    const handleReviewSubmit = async (e) => {
+        const response = await axios
+            .post('https://pacific-oasis-02900.herokuapp.com/reviews', reviewData)
             .then(res => res.json())
             .then(data => {
                 if (data.insertedId) {
                     setConfirm(true);
                 }
             })
+        // fetch('https://pacific-oasis-02900.herokuapp.com/reviews', {
+        //     method: 'POST',
+        //     headers: {
+        //         'content-type': 'application/json'
+        //     },
+        //     body: JSON.stringify(reviewData)
+        // })
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         if (data.insertedId) {
+        //             setConfirm(true);
+        //         }
+        //     })
         e.preventDefault();
     }
     return (

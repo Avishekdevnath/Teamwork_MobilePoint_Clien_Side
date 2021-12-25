@@ -1,12 +1,13 @@
 import { Alert, Button, Snackbar, TextField, Typography } from '@mui/material';
 import { Box } from '@mui/system';
+import axios from 'axios';
 import React, { useState } from 'react';
 import useAuth from '../../../../Hooks/useAuth';
 
 const BikeDetailsCart = (props) => {
     const { price, picture, name } = props.bike;
     const { user } = useAuth();
-    const bikeData = { picture, name }
+    const bikeData = { picture, name };
     const initialInfo = { displayName: user.displayName, email: user.email, status: 'pending' }
     const [order, setOrder] = useState(initialInfo);
 
@@ -32,24 +33,26 @@ const BikeDetailsCart = (props) => {
         newOrderData["bike"] = bikeData;
         newOrderData[field] = value;
         setOrder(newOrderData);
+        e.reset();
     }
 
-    const handleCartSubmit = (e) => {
-        fetch('https://pacific-oasis-02900.herokuapp.com/allOrders', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(order)
-        })
+
+    const handleCartSubmit = async (e) => {
+        const data = await axios
+            .post('https://pacific-oasis-02900.herokuapp.com/allOrders', order)
             .then(res => res.json())
             .then(data => {
                 if (data.insertedId) {
                     setConfirm(true);
+                    setOrder(null);
                 }
             })
+            .catch((err) => console.error("Error: ", err))
+        e.reset();
         e.preventDefault();
     }
+
+
     return (
         <Box sx={{ border: '1px solid #ff8000', p: 2 }}>
             <Typography sx={{ fontWeight: 'bold', display: 'flex', justifyContent: 'center' }} variant="h5">Price: <Box sx={{ color: 'Red' }}> ${price}</Box></Typography>

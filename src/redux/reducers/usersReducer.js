@@ -2,7 +2,7 @@ const intialState = {
     users: []
 };
 
-export const userReduser = (state = intialState, { type, payload }) => {
+export const userReducer = (state = intialState, { type, payload }) => {
     // console.log('payload', payload);
     switch (type) {
         case 'USER':
