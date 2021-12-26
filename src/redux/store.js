@@ -1,5 +1,4 @@
 import { createStore } from "redux";
-// import reducers from "./reducers";
 
 import reducers from "./reducers/index";
 import { persistStore, persistReducer } from 'redux-persist'

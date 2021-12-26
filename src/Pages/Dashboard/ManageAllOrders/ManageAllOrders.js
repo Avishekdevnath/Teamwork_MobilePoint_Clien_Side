@@ -2,65 +2,36 @@ import { Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRo
 import React, { useEffect, useState } from 'react';
 import Paper from '@mui/material/Paper';
 import axios from 'axios';
-import { setOrder } from '../../../redux/actions';
-import { useSelector } from 'react-redux';
+import { setOrders } from '../../../redux/actions';
+import { useDispatch, useSelector } from 'react-redux';
 
 const ManageAllOrders = () => {
-    // const [allOrders, setAllOrders] = useState([]);
-    // useEffect(() => {
-    //     fetch('https://pacific-oasis-02900.herokuapp.com/allOrders')
-    //         .then(res => res.json())
-    //         .then(data => setAllOrders(data))
-    // }, [allOrders])
 
-    const allOrders = useSelector((state) => state.ordersReducer.orders);
-
+    const orders = useSelector((state) => state.ordersReducer.orders);
+    const dispatch = useDispatch();
     // Updating order status
-    const handleUpdatedStatus = async (_id, status, ...rest) => {
+    const handleUpdatedStatus = (_id, status, ...rest) => {
 
         alert('updated');
         const updatedStatus = 'shipped';
-        const response = await axios
-            .put(`https://pacific-oasis-02900.herokuapp.com/allOrders/${_id}`, { status: updatedStatus })
-        // const url = `https://pacific-oasis-02900.herokuapp.com/allOrders/${_id}`;
-        // fetch(url, {
-        //     method: 'PUT',
-        //     headers: {
-        //         'content-type': 'application/json'
-        //     },
-        //     body: JSON.stringify(updatedUser)
-        // })
+        axios.put(`https://pacific-oasis-02900.herokuapp.com/allOrders/${_id}`, { status: updatedStatus })
+
     }
 
     // deleting order
     const handleDelete = (_id) => {
         const confirm = window.confirm('Do you want to delete?')
         if (confirm) {
-            const deleteOrder = async () => {
-                const response = await axios
-                    .delete(`https://pacific-oasis-02900.herokuapp.com/allOrders/${_id}`)
-                    .then(res => res.json())
-                    .then(data => {
-                        if (data.deletedCount > 0) {
-                            alert('deleted seccessfully');
-                            const remainingOrders = allOrders.filter(order => order._id !== _id)
-                            setOrder(remainingOrders);
-                        }
-                    })
-            }
+            axios.delete(`https://pacific-oasis-02900.herokuapp.com/allOrders/${_id}`)
+                .then(data => {
+                    const deletedCount = data.data.deletedCount;
+                    if (deletedCount > 0) {
+                        alert('deleted seccessfully');
+                        const remainingOrders = orders.filter(order => order._id !== _id)
+                        dispatch(setOrders(remainingOrders));
+                    }
+                })
 
-            // const url = `https://pacific-oasis-02900.herokuapp.com/allOrders/${_id}`;
-            // fetch(url, {
-            //     method: 'DELETE',
-            // })
-            //     .then(res => res.json())
-            //     .then(data => {
-            //         if (data.deletedCount > 0) {
-            //             alert('deleted seccessfully');
-            //             const remainingOrders = allOrders.filter(order => order._id !== _id)
-            //             setAllOrders(remainingOrders);
-            //         }
-            //     })
         }
     }
 
@@ -80,7 +51,7 @@ const ManageAllOrders = () => {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {allOrders.map((row) => {
+                        {orders.map((row) => {
                             const { _id, status, email, bike, displayName, phone, address } = row;
                             return (
                                 <TableRow

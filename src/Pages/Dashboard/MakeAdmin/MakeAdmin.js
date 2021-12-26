@@ -14,29 +14,17 @@ const MakeAdmin = () => {
         newAdminData[field] = value;
         setAdminData(newAdminData);
     }
-    const handleAdminSubmit = async (e) => {
+    const handleAdminSubmit = (e) => {
         const user = { ...adminData };
-        const response = await axios
-            .put('https://pacific-oasis-02900.herokuapp.com/users/admin', user)
-            .then(res => res.json())
+        axios.put('https://pacific-oasis-02900.herokuapp.com/users/admin', user)
+            
             .then(data => {
-                if (data.modifiedCount) {
+                const modifiedCount = data.data.modifiedCount
+                if (modifiedCount) {
                     alert('admin added successfully');
                 }
             })
-        // fetch('https://pacific-oasis-02900.herokuapp.com/users/admin', {
-        //     method: 'PUT',
-        //     headers: {
-        //         'content-type': 'application/json'
-        //     },
-        //     body: JSON.stringify(user)
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         if (data.modifiedCount) {
-        //             alert('admin added successfully');
-        //         }
-        //     })
+
         e.preventDefault();
     }
     return (

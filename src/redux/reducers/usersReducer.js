@@ -3,7 +3,6 @@ const intialState = {
 };
 
 export const userReducer = (state = intialState, { type, payload }) => {
-    // console.log('payload', payload);
     switch (type) {
         case 'USER':
             return { ...state, firebase: payload };

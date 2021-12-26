@@ -9,6 +9,7 @@ import React from 'react';
 
 const BikeDetails = ({ bike }) => {
     const { name, power, mileage, transmission, registrationDate, description, color } = bike;
+    // console.log(bike)
     return (
         <Box sx={{ boxShadow: 3, border: '1px solid #ff8000', textAlign: 'left', p: 3, pt: 0 }}>
             <h2>{name}</h2>

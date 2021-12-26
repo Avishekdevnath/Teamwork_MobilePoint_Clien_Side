@@ -24,7 +24,7 @@ export const setReviews = (payload) => {
     };
 };
 
-export const setOrder = (payload) => {
+export const setOrders = (payload) => {
     return {
         type: 'SET_ORDERS',
         payload: payload,

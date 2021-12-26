@@ -1,5 +1,5 @@
 const initialState = {
-    orders: []
+    orders: [],
 };
 
 export const ordersReducer = (state = initialState, { type, payload }) => {

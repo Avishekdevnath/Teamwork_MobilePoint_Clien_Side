@@ -33,22 +33,20 @@ const BikeDetailsCart = (props) => {
         newOrderData["bike"] = bikeData;
         newOrderData[field] = value;
         setOrder(newOrderData);
-        e.reset();
+        // e.reset();
     }
 
 
-    const handleCartSubmit = async (e) => {
-        const data = await axios
-            .post('https://pacific-oasis-02900.herokuapp.com/allOrders', order)
-            .then(res => res.json())
+    const handleCartSubmit = (e) => {
+        axios.post('https://pacific-oasis-02900.herokuapp.com/allOrders', order)
             .then(data => {
-                if (data.insertedId) {
+                const id = data.data.insertedId;
+                if (id) {
                     setConfirm(true);
                     setOrder(null);
                 }
             })
             .catch((err) => console.error("Error: ", err))
-        e.reset();
         e.preventDefault();
     }
 

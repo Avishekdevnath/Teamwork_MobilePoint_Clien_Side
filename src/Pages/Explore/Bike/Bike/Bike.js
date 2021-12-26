@@ -10,17 +10,10 @@ import BikeDetailsCart from '../BikeDetailsCart/BikeDetailsCart';
 
 const Bike = () => {
     const { bikeID } = useParams();
-    // const [bike, setBike] = useState({});
 
     const bikes = useSelector((state) => state.bikesReducer.bikes);
 
     const bike = bikes.filter(bike => bike._id === bikeID);
-
-    // useEffect(() => {
-    //     fetch(`https://pacific-oasis-02900.herokuapp.com/bikes/${bikeID}`)
-    //         .then(res => res.json())
-    //         .then(data => setBike(data))
-    // }, [bikeID])
 
     return (
         <>
@@ -29,17 +22,17 @@ const Bike = () => {
                 className="banner"
                 sx={{
                     height: '85vh',
-                    background: `url("${bike.picture}")`,
+                    background: `url("${bike[0].picture}")`,
                     backgroundRepeat: 'no-repeat',
                     backgroundSize: '100% 100%'
                 }}></Box>
             <Container sx={{ flexGrow: 1, mx: 'auto', mt: 5 }}>
                 <Grid container spacing={2}>
                     <Grid item xs={12} md={8}>
-                        <BikeDetails bike={bike}></BikeDetails>
+                        <BikeDetails bike={bike[0]}></BikeDetails>
                     </Grid>
                     <Grid item xs={12} md={4}>
-                        <BikeDetailsCart bike={bike}></BikeDetailsCart>
+                        <BikeDetailsCart bike={bike[0]}></BikeDetailsCart>
                     </Grid>
                 </Grid>
             </Container>

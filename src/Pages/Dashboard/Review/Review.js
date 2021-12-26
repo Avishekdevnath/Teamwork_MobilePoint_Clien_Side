@@ -32,28 +32,15 @@ const Review = () => {
         newReviewData[field] = value;
         setReviewData(newReviewData);
     }
-    const handleReviewSubmit = async (e) => {
-        const response = await axios
-            .post('https://pacific-oasis-02900.herokuapp.com/reviews', reviewData)
-            .then(res => res.json())
+    const handleReviewSubmit = (e) => {
+        axios.post('https://pacific-oasis-02900.herokuapp.com/reviews', reviewData)
             .then(data => {
-                if (data.insertedId) {
+                const id = data.data.insertedId;
+                if (id) {
                     setConfirm(true);
                 }
             })
-        // fetch('https://pacific-oasis-02900.herokuapp.com/reviews', {
-        //     method: 'POST',
-        //     headers: {
-        //         'content-type': 'application/json'
-        //     },
-        //     body: JSON.stringify(reviewData)
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         if (data.insertedId) {
-        //             setConfirm(true);
-        //         }
-        //     })
+
         e.preventDefault();
     }
     return (

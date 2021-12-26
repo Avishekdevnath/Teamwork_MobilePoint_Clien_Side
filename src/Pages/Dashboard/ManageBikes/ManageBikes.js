@@ -13,31 +13,16 @@ const ManageBikes = () => {
         const confirm = window.confirm('Do you want to delete?')
 
         if (confirm) {
-            const deleteBike = async () => {
-                const response = await axios
-                    .delete(`https://pacific-oasis-02900.herokuapp.com/bikes/${_id}`)
-                    .then(res => res.json())
+                axios.delete(`https://pacific-oasis-02900.herokuapp.com/bikes/${_id}`)
                     .then(data => {
-                        if (data.deletedCount > 0) {
+                        const deletedCount = data.data.deletedCount 
+                        if (deletedCount > 0) {
                             alert('deleted seccessfully');
                             const remainingOrders = bikes.filter(order => order._id !== _id)
                             setBikes(remainingOrders);
                         }
                     })
 
-            }
-            //     const url = `https://pacific-oasis-02900.herokuapp.com/bikes/${_id}`;
-            // fetch(url, {
-            //     method: 'DELETE',
-            // })
-            //     .then(res => res.json())
-            //     .then(data => {
-            //         if (data.deletedCount > 0) {
-            //             alert('deleted seccessfully');
-            //             const remainingOrders = bikes.filter(order => order._id !== _id)
-            //             setBikes(remainingOrders);
-            //         }
-            //     })
         }
     }
     return (
