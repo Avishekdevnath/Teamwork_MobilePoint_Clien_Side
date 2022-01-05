@@ -10,9 +10,9 @@ export const user = (payload) => {
         payload: payload,
     };
 };
-export const setBikes = (payload) => {
+export const setmobiles = (payload) => {
     return {
-        type: 'SET_BIKES',
+        type: 'SET_MOBILES',
         payload: payload,
     };
 };

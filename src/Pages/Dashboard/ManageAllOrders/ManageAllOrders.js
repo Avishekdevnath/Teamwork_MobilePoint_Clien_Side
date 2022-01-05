@@ -14,7 +14,7 @@ const ManageAllOrders = () => {
 
         alert('updated');
         const updatedStatus = 'shipped';
-        axios.put(`https://pacific-oasis-02900.herokuapp.com/allOrders/${_id}`, { status: updatedStatus })
+        axios.put(`https://mobilepointserver.herokuapp.com/allOrders/${_id}`, { status: updatedStatus })
 
     }
 
@@ -22,7 +22,7 @@ const ManageAllOrders = () => {
     const handleDelete = (_id) => {
         const confirm = window.confirm('Do you want to delete?')
         if (confirm) {
-            axios.delete(`https://pacific-oasis-02900.herokuapp.com/allOrders/${_id}`)
+            axios.delete(`https://mobilepointserver.herokuapp.com/allOrders/${_id}`)
                 .then(data => {
                     const deletedCount = data.data.deletedCount;
                     if (deletedCount > 0) {
@@ -52,21 +52,21 @@ const ManageAllOrders = () => {
                     </TableHead>
                     <TableBody>
                         {orders.map((row) => {
-                            const { _id, status, email, bike, displayName, phone, address } = row;
+                            const { _id, status, email, mobile, displayName, phone, address } = row;
                             return (
                                 <TableRow
                                     key={row._id}
                                     sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                                 >
                                     <TableCell align="center" component="th" scope="row">
-                                        {row.bike.name}
+                                        {row.displayName}
                                     </TableCell>
-                                    <TableCell align="center">{row.displayName}</TableCell>
+                                    <TableCell align="center">{row.mobile.name}</TableCell>
                                     <TableCell align="center">{row.phone}</TableCell>
                                     <TableCell align="center">
                                         <Button
                                             variant="contained"
-                                            onClick={() => handleUpdatedStatus(_id, status, email, displayName, bike, phone, address)}
+                                            onClick={() => handleUpdatedStatus(_id, status, email, displayName, mobile, phone, address)}
                                         >{row.status}</Button>
                                     </TableCell>
                                     <TableCell align="center">

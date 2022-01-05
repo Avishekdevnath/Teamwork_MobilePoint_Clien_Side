@@ -12,38 +12,39 @@ import SignUp from './Pages/Login/SignUp/SignUp';
 import AuthProvider from './Contexts/AuthProvider/AuthProvider';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import Explore from './Pages/Explore/Explore/Explore';
-import BikeDetails from './Pages/Explore/Bike/Bike/Bike';
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
-import { setBikes, setOrders, setReviews } from './redux/actions';
+import { setmobiles, setOrders, setReviews } from './redux/actions';
 import { useEffect } from 'react';
+import MobileDetails from './Pages/Explore/Mobile/MobileDetails/MobileDetails';
+import Mobile from './Pages/Explore/Mobile/Mobile/Mobile';
 
 function App() {
 
   const user = useSelector((state) => state?.firebaseReducer?.firebase);
-  const bikes = useSelector((state) => state.bikesReducer.bikes);
+  const mobiles = useSelector((state) => state.mobilesReducer.mobiles);
   const reviews = useSelector((state) => state.reviewsReducer.reviews);
   const orders = useSelector((state) => state.ordersReducer.orders);
   const dispatch = useDispatch();
 
-  // Fetching Bikes
-  const fetchBikes = async () => {
+  // Fetching mobiles
+  const fetchMobiles = async () => {
     const response = await axios
-      .get("https://pacific-oasis-02900.herokuapp.com/bikes/")
+      .get("https://mobilepointserver.herokuapp.com/mobiles/")
       .catch((err) => {
         console.error("Error: ", err);
       });
-    dispatch(setBikes(response.data));
+    dispatch(setmobiles(response.data));
   };
   useEffect(() => {
-    fetchBikes();
-  }, [bikes]);
+    fetchMobiles();
+  }, [mobiles]);
 
 
   // Fetching Reviews
   const fetchReviews = async () => {
     const response = await axios
-      .get('https://pacific-oasis-02900.herokuapp.com/reviews')
+      .get('https://mobilepointserver.herokuapp.com/reviews')
       .catch((err) => {
         console.error("Error ", err);
       });
@@ -58,16 +59,15 @@ function App() {
   // Fetching Orders
   const fetchOrders = async () => {
     const response = await axios
-      .get('https://pacific-oasis-02900.herokuapp.com/allOrders')
+      .get('https://mobilepointserver.herokuapp.com/allOrders')
       .catch((err) => {
         console.error("Error ", err);
       });
     dispatch(setOrders(response.data))
   }
-  useEffect(()=>
-  {
+  useEffect(() => {
     fetchOrders();
-  },[orders])
+  }, [orders])
 
   return (
     <div className="App">
@@ -83,8 +83,8 @@ function App() {
             <Route path="/explore">
               <Explore></Explore>
             </Route>
-            <PrivateRoute path="/bikeDetails/:bikeID">
-              <BikeDetails></BikeDetails>
+            <PrivateRoute path="/mobileDetails/:mobileID">
+              <Mobile></Mobile>
             </PrivateRoute>
             <Route path="/login">
               <Login></Login>

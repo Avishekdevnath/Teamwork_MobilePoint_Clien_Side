@@ -1,0 +1,102 @@
+[
+    {
+        "id": 1,
+        "picture": "https://www.mobiledokan.com/wp-content/uploads/2021/10/Infinix-Hot-11S-image.jpg",
+        "name": "Infinix Hot 11S",
+        "shortDescription": "Infinix Hot 11S comes with 6.78 inches Full HD+ screen. It has a punch-hole front camera design. ",
+        "description": "Infinix Hot 11S comes with 6.78 inches Full HD+ screen. It has a punch-hole front camera design. The back camera is of triple 50+2+2 Megapixel with PDAF, f/1.6, monochrome camera, depth sensor, quad-LED flash, HDR etc. and Quad HD video recording. The front camera is of 8 MP. Infinix Hot 11S comes with 5000 mAh battery with 18W fast charging solution. It has 4 or 6 GB RAM, up to 2 GHz octa-core CPU and Mali-G52 MC2 GPU. It is powered by a Mediatek Helio G88 (12 nm) chipset. The device comes with 128 GB internal storage and dedicated MicroSD slot. There is a back-mounted fingerprint sensor in this phone.Among other features, there is FM Radio, Dual SIM, face unlock etc.",
+        "rating": 5,
+        "price":  14990
+        
+    },
+    {
+        "id": 2,
+        "picture": "https://www.mobiledokan.com/wp-content/uploads/2021/08/Oppo-A16-image.jpg",
+        "name": "Oppo A16",
+        "shortDescription": "Oppo A16 comes with 6.52 inches HD+ screen. It has a Full-View waterdrop notch design.",
+        "description": "Oppo A16 comes with 6.52 inches HD+ screen. It has a Full-View waterdrop notch design. The back camera is of triple 13+2+2 MP with LED flash, PDAF, depth sensor, macro camera etc. and Full HD video recording. The front camera is of 8 MP. Oppo A16 comes with 5000 mAh battery with 10W fast charging solution. It has 3 or 4 GB RAM, up to 2.35 GHz octa-core CPU and PowerVR GE8320 GPU. It is powered by a Mediatek Helio G35 (12nm) chipset. The device comes with 32 or 64 GB internal storage and MicroSD slot. There is a back-mounted fingerprint sensor in this phone.Among other features, there is Dual SIM, face unlock etc.",
+        "rating": 5,
+        "price": 12990
+        
+    },
+    {
+        "id": 3,
+        "picture": "https://www.mobiledokan.com/wp-content/uploads/2021/03/Xiaomi-Redmi-Note-10-image.jpg",
+        "name": "Xiaomi Redmi Note 10",
+        "shortDescription": "Xiaomi Redmi Note 10 comes with 6.43 inches Full HD+ Super AMOLED screen. It has a center punch-hole design on the front. ",
+        "description": " Xiaomi Redmi Note 10 comes with 6.43 inches Full HD+ Super AMOLED screen. It has a center punch-hole design on the front. The display is protected by a 3rd generation Gorilla Glass. The back camera is of quad 48+8+2+2 MP with PDAF, ultrawide, depth sensor, dedicated macro camera etc. and 4k Ultra HD video recording. The front camera is of 13 MP. Xiaomi Redmi Note 10 comes with 5000 mAh big battery with a 33W Fast Charging solution. It has 4 or 6 GB RAM, up to 2.2 GHz octa-core CPU and Adreno 612 GPU. It is powered by a Qualcomm Snapdragon 678 (11 nm) chipset. The phone comes with 64 or 128 GB internal storage and dedicated MicroSD slot. There is a side-mounted fingerprint sensor in this phone.Among other features, there is USB type-C, Dual SIM, face unlock, Infrared etc.",
+        "rating": 4.5,
+        "price": 19999
+        
+    },
+    {
+        "id": 4,
+        "picture": "https://www.mobiledokan.com/wp-content/uploads/2021/09/Vivo-Y21-image.jpg",
+        "name": "Vivo Y21",
+        "shortDescription": "Vivo Y21 comes with 6.51 inches HD+ IPS LCD screen. It has a Full-View waterdrop notch design. ",
+        "description": "Vivo Y21 comes with 6.51 inches HD+ IPS LCD screen. It has a Full-View waterdrop notch design. The back camera is of triple 13+2+2 MP with PDAF, depth sensor, dedicated macro camera, LED flash etc. and Full HD video recording. The front camera is of 8 MP. Vivo Y21 comes with 5000 mAh battery with 18W fast charging. It has 4 GB RAM, up to 1.8 GHz octa-core CPU and Adreno 610 GPU. It is powered by a Qualcomm Snapdragon 460 (11 nm) chipset. The device comes with 64 GB internal storage and dedicated MicroSD slot. There is a side-mounted fingerprint sensor in this phone.Among other features, there is FM Radio, Dual SIM, face unlock etc.",
+        "rating": 5,
+        "price": 14990
+        
+    },
+    {
+        "id": 5,
+        "picture": "https://www.mobiledokan.com/wp-content/uploads/2021/04/Realme-8-image.jpg",
+        "name": "Realme 8",
+        "shortDescription": "Realme 8 comes with 6.4 inches Full HD+ Super AMOLED screen. It has a Full-View left punch-hole design.",
+        "description": "Realme 8 comes with 6.4 inches Full HD+ Super AMOLED screen. It has a Full-View left punch-hole design. The back camera is of quad 64+8+2+2 MP with PDAF, dedicated macro camera, depth sensor, ultrawide lens etc. and 4K video recording. The front camera is of 16 MP. Realme 8 comes with 5000 mAh battery with 30W Fast Charging. It has 8 GB RAM, up to 2.05 GHz octa-core CPU and Mali-G76 MC4 GPU. It is powered by a Mediatek Helio G95 (12 nm) chipset. The device comes with 128 GB internal storage and dedicated MicroSD slot. There is a in-display fingerprint sensor in this phone.Among other features, there is Dual SIM, face unlock, USB Type-C etc.",
+        "rating": 4.7,
+        "price": 22990
+        
+    },
+    {
+        "id": 6,
+        "picture": "https://www.mobiledokan.com/wp-content/uploads/2021/03/Xiaomi-Redmi-Note-10-Pro-image.jpg",
+        "name": "Xiaomi Redmi Note 10 Pro",
+        "shortDescription": "Xiaomi Redmi Note 10 Pro comes with 6.67 inches Full HD+ AMOLED screen. It has a center punch-hole design on the front.",
+        "description": "Xiaomi Redmi Note 10 Pro comes with 6.67 inches Full HD+ AMOLED screen. It has a center punch-hole design on the front. The display is protected by 5th generation Gorilla Glasses. The back camera is of quad 64+8+5+2 Megapixel with PDAF, ultrawide, depth sensor, dedicated macro camera etc. and 4k Ultra HD video recording. The front camera is of 16 MP. Redmi Note 10 Pro comes with 5020 mAh big battery with a 33W Fast Charging solution. It has 6 GB RAM, up to 2.3 GHz octa-core CPU and Adreno 618 GPU. It is powered by a Qualcomm Snapdragon 732G (8 nm) chipset. The phone comes with 64 or 128 GB internal storage and dedicated MicroSD slot. There is a side-mounted fingerprint sensor in this phone.Among other features, there is USB type-C, Dual SIM, face unlock, Infrared etc.",
+        "rating": 5,
+        "price": 25999 
+        
+    },
+    {
+        "id": 7,
+        "picture": "https://www.mobiledokan.com/wp-content/uploads/2021/10/Xiaomi-Redmi-10-image.jpg",
+        "name": "Xiaomi Redmi 10",
+        "shortDescription": "Xiaomi Redmi 10 comes with 6.5 inches Full HD+ LCD screen. It has a center punch-hole design on the front. The display is protected by a 3rd generation Gorilla Glass.",
+        "description": "Xiaomi Redmi 10 comes with 6.5 inches Full HD+ LCD screen. It has a center punch-hole design on the front. The display is protected by a 3rd generation Gorilla Glass. The back camera is of quad 50+8+2+2 MP with PDAF, ultrawide, depth sensor, dedicated macro camera etc. and Full HD video recording. The front camera is of 8 MP. Xiaomi Redmi 10 comes with 5000 mAh big battery with a 18W Fast Charging. It has 4 or 6 GB RAM, up to 2.0 GHz octa-core CPU and Mali-G52 MC2 GPU. It is powered by a MediaTek Helio G88 (12nm) chipset. The phone comes with 64 or 128 GB internal storage and dedicated MicroSD slot. There is a side-mounted fingerprint sensor in this phone.Among other features, there is USB type-C, Dual SIM, face unlock, Infrared etc.",
+        "rating": 5,
+        "price": 18999
+        
+    },
+    {
+        "id": 8,
+        "picture": "https://www.mobiledokan.com/wp-content/uploads/2021/03/Samsung-Galaxy-A12-image.jpg",
+        "name": "Samsung Galaxy A12",
+        "shortDescription": "Samsung Galaxy A12 comes with 6.5 inches PLS IPS HD+ screen. It has a Full-View waterdrop notch design.  ",
+        "description": "Samsung Galaxy A12 comes with 6.5 inches PLS IPS HD+ screen. It has a Full-View waterdrop notch design. The back camera is of quad 48+5+2+2 MP with Autofocus, LED flash, depth sensor, dedicated macro camera etc. and Full HD video recording. The front camera is of 8 MP. Galaxy A12 comes with 5000 mAh battery with 15W fast charging. It has 3, 4 or 6 GB RAM, up to 2.35 GHz octa-core CPU and PowerVR GE8320 GPU. It is powered by a Mediatek Helio P35 (12nm) chipset. The device comes with 32, 64 or 128 GB internal storage and dedicated MicroSD slot. There is a side-mounted fingerprint sensor in this phone. Among other features, there is FM Radio, Dual SIM, face unlock, Android 10 etc.",
+        "rating": 5,
+        "price": 14999
+        
+    },
+    {
+        "id": 9,
+        "picture": "https://www.mobiledokan.com/wp-content/uploads/2021/11/Xiaomi-Redmi-10-Prime-image.jpg",
+        "name": "Xiaomi Redmi 10 Prime",
+        "shortDescription": "Xiaomi Redmi 10 Prime comes with 6.5 inches Full HD+ LCD screen. It has a center punch-hole design on the front. The display is protected by a 3rd generation Gorilla Glass.",
+        "description": "Xiaomi Redmi 10 Prime comes with 6.5 inches Full HD+ LCD screen. It has a center punch-hole design on the front. The display is protected by a 3rd generation Gorilla Glass. The back camera is of quad 50+8+2+2 MP with PDAF, ultrawide, depth sensor, dedicated macro camera etc. and Full HD video recording. The front camera is of 8 MP. Redmi 10 Prime comes with 6000 mAh big battery with a 18W Fast Charging. It has 4 or 6 GB RAM, up to 2.0 GHz octa-core CPU and Mali-G52 MC2 GPU. It is powered by a MediaTek Helio G88 (12nm) chipset. The phone comes with 64 or 128 GB internal storage and dedicated MicroSD slot. There is a side-mounted fingerprint sensor in this phone. Among other features, there is USB type-C, Dual SIM, face unlock, Infrared etc.",
+        "rating": 5,
+        "price": 19499
+        
+    },
+    {
+        "id": 10,
+        "picture": "https://www.mobiledokan.com/wp-content/uploads/2021/06/Xiaomi-Redmi-Note-10S-image.jpg",
+        "name": "Xiaomi Redmi Note 10S",
+        "shortDescription": "Xiaomi Redmi Note 10S comes with 6.43 inches Full HD+ AMOLED screen. It has a center punch-hole design on the front. The display is protected by a 3rd generation Gorilla Glass. ",
+        "description": "Xiaomi Redmi Note 10S comes with 6.43 inches Full HD+ AMOLED screen. It has a center punch-hole design on the front. The display is protected by a 3rd generation Gorilla Glass. The back camera is of quad 64+8+2+2 MP with PDAF, ultrawide, depth sensor, dedicated macro camera etc. and 4k Ultra HD video recording. The front camera is of 13 MP. Redmi Note 10S comes with 5000 mAh big battery with a 33W Fast Charging solution. It has 6 or 8 GB RAM, up to 2.05 GHz octa-core CPU and Mali-G76 MC4 GPU. It is powered by a MediaTek Helio G95 (12 nm) chipset. The phone comes with 64 or 128 GB internal storage and dedicated MicroSD slot. There is a side-mounted fingerprint sensor in this phone. Among other features, there is USB type-C, Dual SIM, face unlock, Infrared etc.",
+        "rating": 5,
+        "price": 23000
+        
+    }
+]

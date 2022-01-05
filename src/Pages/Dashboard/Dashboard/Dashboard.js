@@ -17,11 +17,12 @@ import MyOrders from '../MyOrders/MyOrders';
 import Payment from '../Payment/Payment';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import useAuth from '../../../Hooks/useAuth';
-import AddNewBike from '../AddNewBike/AddNewBike';
-import ManageBikes from '../ManageBikes/ManageBikes';
 import ManageAllOrders from '../ManageAllOrders/ManageAllOrders';
 import DefaultPage from '../DefaultPage/DefaultPage';
 import AdminRoute from '../../Login/AdminRoute/AdminRoute';
+import AddNewMobile from '../AddNewMobile/AddNewMobile';
+import ManageMobiles from '../ManageMobiles/ManageMobiles';
+
 
 const drawerWidth = 250;
 
@@ -64,9 +65,9 @@ function Dashboard(props) {
                         <Box>
                             <NavLink exact activeClassName="active" to={`${url}`} className="dashboard-tabs"><Button color="inherit">Dashboard</Button></NavLink>
                             <NavLink exact activeClassName="active" to={`${url}/makeAdmin`} className="dashboard-tabs"><Button color="inherit">Make Admin</Button></NavLink>
-                            <NavLink exact activeClassName="active" to={`${url}/addNewBike`} className="dashboard-tabs"><Button color="inherit">Add New Bike</Button></NavLink>
+                            <NavLink exact activeClassName="active" to={`${url}/addNewmobile`} className="dashboard-tabs"><Button color="inherit">Add New mobile</Button></NavLink>
                             <NavLink exact activeClassName="active" to={`${url}/manageAllOrders`} className="dashboard-tabs"><Button color="inherit">Manage All Orders</Button></NavLink>
-                            <NavLink exact activeClassName="active" to={`${url}/manageBikes`} className="dashboard-tabs"><Button color="inherit">Manage Bikes</Button></NavLink>
+                            <NavLink exact activeClassName="active" to={`${url}/managemobiles`} className="dashboard-tabs"><Button color="inherit">Manage mobiles</Button></NavLink>
                         </Box>
                 }
             </Box>
@@ -160,14 +161,14 @@ function Dashboard(props) {
                     <AdminRoute path={`${path}/makeAdmin`}>
                         <MakeAdmin></MakeAdmin>
                     </AdminRoute>
-                    <AdminRoute path={`${path}/addNewBike`}>
-                        <AddNewBike></AddNewBike>
+                    <AdminRoute path={`${path}/addNewMobile`}>
+                        <AddNewMobile></AddNewMobile>
                     </AdminRoute>
                     <AdminRoute path={`${path}/manageAllOrders`}>
                         <ManageAllOrders></ManageAllOrders>
                     </AdminRoute>
-                    <AdminRoute path={`${path}/manageBikes`}>
-                        <ManageBikes></ManageBikes>
+                    <AdminRoute path={`${path}/managemobiles`}>
+                        <ManageMobiles></ManageMobiles>
                     </AdminRoute>
                 </Switch>
 

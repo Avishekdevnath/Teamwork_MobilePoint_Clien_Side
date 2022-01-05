@@ -2,45 +2,45 @@ import React from 'react';
 import { Button, Container, Rating, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@mui/material';
 import Paper from '@mui/material/Paper';
 import { useSelector } from 'react-redux';
-import { setBikes } from '../../../redux/actions';
+import { setmobiles } from '../../../redux/actions';
 import axios from 'axios';
 
-const ManageBikes = () => {
-    const bikes = useSelector((state) => state.bikesReducer.bikes);
+const ManageMobiles = () => {
+    const mobiles = useSelector((state) => state.mobilesReducer.mobiles);
 
     // deleting order
     const handleDelete = (_id) => {
         const confirm = window.confirm('Do you want to delete?')
 
         if (confirm) {
-                axios.delete(`https://pacific-oasis-02900.herokuapp.com/bikes/${_id}`)
-                    .then(data => {
-                        const deletedCount = data.data.deletedCount 
-                        if (deletedCount > 0) {
-                            alert('deleted seccessfully');
-                            const remainingOrders = bikes.filter(order => order._id !== _id)
-                            setBikes(remainingOrders);
-                        }
-                    })
+            axios.delete(`https://mobilepointserver.herokuapp.com/mobiles/${_id}`)
+                .then(data => {
+                    const deletedCount = data.data.deletedCount
+                    if (deletedCount > 0) {
+                        alert('deleted seccessfully');
+                        const remainingOrders = mobiles.filter(order => order._id !== _id)
+                        setmobiles(remainingOrders);
+                    }
+                })
 
         }
     }
     return (
         <Container>
-            <h2>Manage all Bikes here</h2>
+            <h2>Manage all mobiles here</h2>
             <Paper sx={{ width: '100%', overflow: 'hidden', boxShadow: 3 }}>
                 <TableContainer sx={{ maxHeight: 500 }}>
                     <Table stickyHeader aria-label="sticky table">
                         <TableHead>
                             <TableRow>
-                                <TableCell align="center"> <Typography variant="h6" sx={{ fontWeight: 'bold' }}>Bike Picture</Typography> </TableCell>
-                                <TableCell align="center"> <Typography variant="h6" sx={{ fontWeight: 'bold' }}>Bike Name</Typography> </TableCell>
+                                <TableCell align="center"> <Typography variant="h6" sx={{ fontWeight: 'bold' }}>mobile Picture</Typography> </TableCell>
+                                <TableCell align="center"> <Typography variant="h6" sx={{ fontWeight: 'bold' }}>mobile Name</Typography> </TableCell>
                                 <TableCell align="center"> <Typography variant="h6" sx={{ fontWeight: 'bold' }}>Ratings</Typography> </TableCell>
-                                <TableCell align="center"> <Typography variant="h6" sx={{ fontWeight: 'bold' }}>Delete Bike</Typography> </TableCell>
+                                <TableCell align="center"> <Typography variant="h6" sx={{ fontWeight: 'bold' }}>Delete mobile</Typography> </TableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                            {bikes.map((row) => {
+                            {mobiles.map((row) => {
                                 const { _id, picture, name, rating } = row;
                                 return (
                                     <TableRow
@@ -61,7 +61,7 @@ const ManageBikes = () => {
                                                 variant="contained"
                                                 sx={{ background: 'red' }}
                                                 onClick={() => handleDelete(_id)}
-                                            >Delete Bike</Button>
+                                            >Delete mobile</Button>
                                         </TableCell>
                                     </TableRow>)
                             })}
@@ -73,4 +73,4 @@ const ManageBikes = () => {
     );
 };
 
-export default ManageBikes;
+export default ManageMobiles;

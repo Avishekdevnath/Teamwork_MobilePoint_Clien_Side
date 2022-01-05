@@ -7,7 +7,7 @@ const MyOrders = () => {
     const { user } = useAuth();
     const [allOrders, setAllOrders] = useState([]);
     useEffect(() => {
-        fetch('https://pacific-oasis-02900.herokuapp.com/allOrders')
+        fetch('https://mobilepointserver.herokuapp.com/allOrders')
             .then(res => res.json())
             .then(data => setAllOrders(data))
     }, [])
@@ -17,7 +17,7 @@ const MyOrders = () => {
     const handleDelete = (_id) => {
         const confirm = window.confirm('Do you want to delete?')
         if (confirm) {
-            const url = `https://pacific-oasis-02900.herokuapp.com/allOrders/${_id}`;
+            const url = `https://mobilepointserver.herokuapp.com/allOrders/${_id}`;
             fetch(url, {
                 method: 'DELETE',
             })
@@ -53,7 +53,7 @@ const MyOrders = () => {
                             >
 
                                 <TableCell align="center" component="th" scope="row">
-                                    {row.bike.name}
+                                    {row.mobile.name}
                                 </TableCell>
                                 <TableCell align="center">{row.displayName}</TableCell>
                                 <TableCell align="center">{row.phone}</TableCell>

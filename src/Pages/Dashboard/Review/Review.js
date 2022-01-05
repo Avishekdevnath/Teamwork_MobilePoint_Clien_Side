@@ -33,7 +33,7 @@ const Review = () => {
         setReviewData(newReviewData);
     }
     const handleReviewSubmit = (e) => {
-        axios.post('https://pacific-oasis-02900.herokuapp.com/reviews', reviewData)
+        axios.post('https://mobilepointserver.herokuapp.com/reviews', reviewData)
             .then(data => {
                 const id = data.data.insertedId;
                 if (id) {

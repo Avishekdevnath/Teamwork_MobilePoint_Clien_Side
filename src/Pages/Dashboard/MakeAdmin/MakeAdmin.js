@@ -16,8 +16,8 @@ const MakeAdmin = () => {
     }
     const handleAdminSubmit = (e) => {
         const user = { ...adminData };
-        axios.put('https://pacific-oasis-02900.herokuapp.com/users/admin', user)
-            
+        axios.put('https://mobilepointserver.herokuapp.com/users/admin', user)
+
             .then(data => {
                 const modifiedCount = data.data.modifiedCount
                 if (modifiedCount) {
